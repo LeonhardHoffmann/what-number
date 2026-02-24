@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
+
 
 int main(void){
     int lives = 5;
+    bool recievedBonusLife = false;
     int maxRandomNumber = 100;
     int randomNumber;
     int guess;
@@ -24,8 +27,13 @@ int main(void){
             printf("Sorry, my number is not %d.\n", guess);
             
             if(distanceFromRandom < 5){
-                puts("You're very hot! Have a bonus life!");
-                lives ++;            
+                if(recievedBonusLife == false) {
+                    puts("You're very hot! Have a bonus life!");
+                    recievedBonusLife = true;
+                    lives ++;            
+                } else {
+                    puts("You're very hot!");
+                }
             } else if(distanceFromRandom < 10){
                 puts("You're quite warm...");
                 lives --;
