@@ -33,6 +33,7 @@ int main(void){
                     lives ++;            
                 } else {
                     puts("You're very hot!");
+                    lives --;
                 }
             } else if(distanceFromRandom < 10){
                 puts("You're quite warm...");
