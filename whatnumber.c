@@ -22,7 +22,7 @@ int main(void){
         printf("You have %d guesses\n", lives);
         printf("Enter guess\n?> ");
         int validUserInput = scanf("%d", &guess);
-        if(validUserInput != 1 || guess > 100) {
+        if(validUserInput != 1 || guess > maxRandomNumber) {
             printf("invalid input \n");
             while(getchar() != '\n');
             continue;
